@@ -1,0 +1,30 @@
+{
+  "name": "hosp-bot",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "assert": "^2.0.0",
+    "axios": "^1.1.3",
+    "body-parser": "^1.20.1",
+    "cookie-parser": "~1.4.4",
+    "date-fns": "^2.29.3",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "ejs": "~2.6.1",
+    "env": "^0.0.2",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "mongodb": "^4.10.0",
+    "mongoose": "^6.6.5",
+    "morgan": "~1.9.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
