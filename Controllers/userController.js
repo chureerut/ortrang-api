@@ -90,15 +90,26 @@ exports.destroy = async (req, res, next) => {
     const user = await users.deleteOne({ _id: id });
     console.log(user);
     if (user.deletedCount === 0) {
-      throw new Error("ไม่สามารถลบข้อมูลได้");
+      res.status(400).json({
+        data: {
+          statuscode: "400",
+          status: false,
+          message: "ไม่สามารถลบข้อมูลได้",
+        },
+      });
+      
     } else {
       res.status(200).json({
+        statuscode: "200",
+        status: "OK",
         message: "ลบข้อมูลเรียบร้อย",
       });
     }
   } catch (error) {
     res.status(400).json({
-      error: {
+      data: {
+        statuscode: "400",
+        status: false,
         message: "เกิดผิดพลาด " + error.message,
       },
     });
@@ -106,8 +117,10 @@ exports.destroy = async (req, res, next) => {
 };
 
 exports.update = async (req, res, next) => {
+
   try {
     const { id } = req.params;
+    const userbody = await users.findOne({ id: id });
     const {
       prefixes,
       name,
@@ -154,6 +167,7 @@ exports.update = async (req, res, next) => {
         statuscode: "200",
         status: "OK",
         message: "แก้ไขข้อมูลเรียบร้อย",
+        data: userbody
       });
     }
   } catch (error) {
