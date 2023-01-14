@@ -105,7 +105,6 @@ exports.update = async (req, res, next) => {
   try {
     const { id } = req.params;
     const {
-      _id,
       prefixes,
       name,
       gender,
