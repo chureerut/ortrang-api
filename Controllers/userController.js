@@ -18,6 +18,7 @@ exports.show = async (req, res, next) => {
     if (!user) {
       res.status(200).json({
         data: {
+          statuscode: "200",
           status: false,
           message: "ไม่พบข้อมูลสมาชิก",
         },
@@ -30,6 +31,7 @@ exports.show = async (req, res, next) => {
   } catch (error) {
     res.status(400).json({
       data: {
+        statuscode: "400",
         status: false,
         message: "เกิดผิดพลาด " + error.message,
       },
