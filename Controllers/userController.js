@@ -142,19 +142,25 @@ exports.update = async (req, res, next) => {
 
     if(user.nModified === 0){
       res.status(400).json({
-        error: {
+        data: {
+          statuscode: "400",
+          status: false,
           message: "ไม่สามารถอัปเดตข้อมูลได้",
         },
       });
     }
     else{
       res.status(200).json({
+        statuscode: "200",
+        status: "OK",
         message: "แก้ไขข้อมูลเรียบร้อย",
       });
     }
   } catch (error) {
     res.status(400).json({
-      error: {
+      data: {
+        statuscode: "400",
+        status: false,
         message: "เกิดผิดพลาด " + error.message,
       },
     });
