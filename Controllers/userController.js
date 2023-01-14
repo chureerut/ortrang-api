@@ -76,7 +76,7 @@ exports.insert = async (req, res, next) => {
   await user.save();
 
   res.status(201).json({
-    statuscode: 201,
+    statuscode: "201",
     status: "OK",
     message: "เพิ่มข้อมูลเรียบร้อย",
   });
