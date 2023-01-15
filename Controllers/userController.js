@@ -120,7 +120,6 @@ exports.update = async (req, res, next) => {
 
   try {
     const { id } = req.params;
-    const userbody = await users.findOne({ id: id });
     const {
       prefixes,
       name,
@@ -153,6 +152,8 @@ exports.update = async (req, res, next) => {
       step: step,
     })
 
+    const returnuser = await users.findOne({ _id: id })
+
     if(user.nModified === 0){
       res.status(400).json({
         data: {
@@ -167,7 +168,7 @@ exports.update = async (req, res, next) => {
         statuscode: "200",
         status: "OK",
         message: "แก้ไขข้อมูลเรียบร้อย",
-        data: userbody
+        data: returnuser
       });
     }
   } catch (error) {
