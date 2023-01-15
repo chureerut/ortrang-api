@@ -54,6 +54,7 @@ exports.insert = async (req, res, next) => {
     status,
     lineid,
     linename,
+    lineimg,
     step,
   } = req.body;
 
@@ -72,6 +73,7 @@ exports.insert = async (req, res, next) => {
     status: status,
     lineid: lineid,
     linename: linename,
+    lineimg: lineimg,
     step: step,
   });
   console.log(user);
@@ -133,6 +135,7 @@ exports.update = async (req, res, next) => {
       status,
       lineid,
       linename,
+      lineimg,
       step,
     } = req.body;
 
@@ -149,6 +152,7 @@ exports.update = async (req, res, next) => {
       status: status,
       lineid: lineid,
       linename: linename,
+      lineimg: lineimg,
       step: step,
     })
 

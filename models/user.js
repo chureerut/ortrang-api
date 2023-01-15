@@ -14,6 +14,7 @@ const userSchema = new mongoose.Schema({
   status:Boolean,
   lineid: String,
   linename: String,
+  lineimg: String,
   step: { type: String, default: "0"},
 },{
   collection: 'users'
